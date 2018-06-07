@@ -55,10 +55,10 @@ export default {
       userInfo: this.$store.state.userInfo
     }
   },
-  fetchData (context) {
+  asyncData (context) {
     console.log(context.user)
     return {
-      userInfo: context.user.userInfo
+      userInfo: context.user
     }
   }
 }

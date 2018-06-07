@@ -39,42 +39,24 @@ export default {
     SideBlock
   },
   data () {
+    const query = this.$route.query
+    const page = query.page || 1
+    let listQuery = {
+      category: query.sid || query.cid,
+      page: page
+    }
     return {
       // 主栏目信息
-      id: 0,
-      column: {},
-      // 子栏目信息
-      // sid: 0,
-      // 文章列表
-      listQuery: {},
-      page: 1
+      id: query.cid,
+      listQuery,
+      page
     }
   },
-  created () {
-    this.initData()
-  },
-  computed: {
-  },
-  watch: {
-    '$route': 'initData',
-    'id': 'getInfo'
-  },
-  methods: {
-    async initData () {
-      const query = this.$route.query
-      // this.sid = query.sid || 0
-      // 赋值触发watch
-      if (!this.column.id || this.column.id !== query.cid) {
-        this.id = query.cid
-      }
-      this.page = query.page || 1
-      this.listQuery = {
-        category: query.sid || query.cid,
-        page: this.page
-      }
-    },
-    async getInfo (val) {
-      this.column = await getColumnInfo(val)
+  async asyncData (context) {
+    let id = context.query.cid
+    const column = await getColumnInfo(id)
+    return {
+      column
     }
   }
 }

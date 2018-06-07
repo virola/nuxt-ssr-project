@@ -196,11 +196,6 @@ export default {
       this.logout()
       await userSignout()
     }
-  },
-  async fetch({ store, params }) {
-    console.log(1111)
-    let res = await getUser()
-    store.commit('getUser', res.user_info)
   }
 }
 </script>

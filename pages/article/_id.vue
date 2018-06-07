@@ -1,6 +1,6 @@
 <template>
   <div class="article">
-    <section class="container main clear">
+    <section class="main clear">
       <div class="main-panel fl">
         <div class="breadcrum"><router-link to="/">首页</router-link><span v-if="article.parent_column_id"> > <router-link :to="{path: '/column', query: {cid: article.parent_column_id}}">{{article.parent_column_name}}</router-link></span><span v-if="article.column_id"> > <router-link :to="{path: '/column', query: {cid: article.parent_column_id, sid: article.column_id}}">{{article.column_name}}</router-link></span></div>
         <h2 class="title">{{article.title}}</h2>
@@ -73,6 +73,16 @@ export default {
       title: this.article.title
     }
   },
+  async asyncData (context) {
+    // console.log(context)
+    const id = context.params.id
+    let data = await getArticleData(id)
+    let commentData = await getArticleComment(id)
+    return {
+      article: data.article,
+      comments: commentData.list
+    }
+  },
   data () {
     return {
       article: {
@@ -83,9 +93,6 @@ export default {
       comments: []
     }
   },
-  created () {
-    this.initData()
-  },
   computed: {
     ...mapState([
       'userInfo', 'login'
@@ -95,14 +102,6 @@ export default {
     }
   },
   methods: {
-    async initData () {
-      const id = this.$route.query.id
-      let data = await getArticleData(id)
-      this.article = data.article
-
-      let commentData = await getArticleComment(id)
-      this.comments = commentData.list
-    },
     submitComment () {
       if (this.login) {
         console.log(this.$store.state)
