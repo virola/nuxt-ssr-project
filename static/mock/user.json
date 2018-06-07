@@ -4,7 +4,7 @@
         "user_info": {
             "user_id": 530530,
             "username": "virola",
-            "avatar": "/static/img/avatar.jpeg",
+            "avatar": "http://vue-sample.virola.me/static/img/avatar.jpeg",
             "mobile": "13977885544",
             "auth_wechat": 1,
             "auth_weibo": 0,

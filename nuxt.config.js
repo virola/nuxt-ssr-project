@@ -27,7 +27,8 @@ module.exports = {
     { src: '~/plugins/vue-awesome-swiper', ssr: false }
   ],
   css: [
-    'swiper/dist/css/swiper.css'
+    'swiper/dist/css/swiper.css',
+    { src: '~assets/common.scss', lang: 'scss' }
   ],
 
   modules: [

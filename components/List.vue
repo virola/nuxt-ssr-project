@@ -56,7 +56,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'src/assets/mixin';
+@import 'assets/mixin';
 
 .list-item {
   margin: 30px 0;

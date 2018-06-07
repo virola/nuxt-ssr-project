@@ -24,6 +24,7 @@ const store = () => new Vuex.Store({
       }
     },
     setUser (state, info) {
+      // console.log(arguments)
       state.userInfo = info
       state.login = true
     },

@@ -5,33 +5,33 @@ import axios from '~/plugins/axios'
  */
 const URL_API = {
   // get requests
-  'ARTICLE_LIST': 'static/mock/list_page.json',
-  'SEARCH_LIST': 'static/mock/list.json',
-  'TAG_LIST': 'static/mock/side/tags.json',
+  'ARTICLE_LIST': '/mock/list_page.json',
+  'SEARCH_LIST': '/mock/list.json',
+  'TAG_LIST': '/mock/side/tags.json',
   'ARTICLE_DATA' () {
-    const list = ['static/mock/article/2.json', 'static/mock/article/1.json', 'static/mock/article/3.json']
+    const list = ['/mock/article/2.json', '/mock/article/1.json', '/mock/article/3.json']
     return list[Math.round(Math.random() * (list.length - 1))]
   },
   'COLUMN_DATA': (id) => {
-    const list = ['static/mock/column/default.json', 'static/mock/column/video.json', 'static/mock/column/topic.json']
+    const list = ['/mock/column/default.json', '/mock/column/video.json', '/mock/column/topic.json']
     // const rnd = Math.round(Math.random() * (list.length - 1))
     let index = id > 3 ? 0 : id - 1
     return list[index]
   },
-  'ARTICLE_COMMENTS': 'static/mock/article/comments.json',
-  'BANNER_DATA': 'static/mock/banner.json',
-  'SIDE_ZHAOPIN': 'static/mock/side/zhaopin.json',
-  'SIDE_TRAVEL_APPLY': 'static/mock/side/travel.json',
-  'SIDE_HOT_LIST': 'static/mock/side/hot.json',
-  'SIDE_RECOMMEND': 'static/mock/side/recommend.json',
-  'SIDE_TAGS': 'static/mock/side/tags.json',
-  'USER_DATA': 'static/mock/user.json',
-  'USER_LOGOUT': 'static/mock/logout.json',
-  'USER_COLLECT': 'static/mock/user/collect.json',
-  'USER_MSG': 'static/mock/user/msg.json',
+  'ARTICLE_COMMENTS': '/mock/article/comments.json',
+  'BANNER_DATA': '/mock/banner.json',
+  'SIDE_ZHAOPIN': '/mock/side/zhaopin.json',
+  'SIDE_TRAVEL_APPLY': '/mock/side/travel.json',
+  'SIDE_HOT_LIST': '/mock/side/hot.json',
+  'SIDE_RECOMMEND': '/mock/side/recommend.json',
+  'SIDE_TAGS': '/mock/side/tags.json',
+  'USER_DATA': '/mock/user.json',
+  'USER_LOGOUT': '/mock/logout.json',
+  'USER_COLLECT': '/mock/user/collect.json',
+  'USER_MSG': '/mock/user/msg.json',
   // post requests
-  'USER_LOGIN': 'static/api/post/?type=login',
-  'USER_REGISTER': 'static/api/post/?type=register'
+  'USER_LOGIN': '/api/post/?type=login',
+  'USER_REGISTER': '/api/post/?type=register'
 }
 
 /**
@@ -45,7 +45,11 @@ const fetch = async (url, params = {}, type = 'get') => {
   // console.log(url)
   let options = {
     method: type,
-    url: '/api/' + url
+    url: url
+  }
+  // 生产环境的配置
+  if (process.env.NODE_ENV == 'development') {
+    options.url = '/api/static' + options.url
   }
   // get params or post data
   if (type === 'get') {

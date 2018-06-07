@@ -2,15 +2,15 @@
   <div>
     <banner />
     <section class="main clear">
-      <div class="main-panel fl">
+      <div id="main-panel" class="main-panel fl">
         <div class="tab-title">
-          <router-link to="/index" :class="{active: type == 0}">热门</router-link>
-          <router-link to="/index?type=1" :class="{active: type == 1}">专题</router-link>
-          <router-link to="/index?type=2" :class="{active: type == 2}">人物</router-link>
-          <router-link to="/index?type=3" :class="{active: type == 3}">项目</router-link>
-          <router-link to="/index?type=4" :class="{active: type == 4}">咨询</router-link>
-          <router-link to="/index?type=5" :class="{active: type == 5}">深度</router-link>
-          <router-link to="/index?type=6" :class="{active: type == 6}">视频</router-link>
+          <router-link to="/">热门</router-link>
+          <router-link to="/?type=1">专题</router-link>
+          <router-link to="/?type=2">人物</router-link>
+          <router-link to="/?type=3">项目</router-link>
+          <router-link to="/?type=4">咨询</router-link>
+          <router-link to="/?type=5">深度</router-link>
+          <router-link to="/?type=6">视频</router-link>
         </div>
         <articles :dataset="listQuery" :showLoadmore="false"></articles>
       </div>
@@ -33,8 +33,10 @@ import {getBannerData, getArticleList} from '~/service/getData'
 export default {
   asyncData (context) {
     // called every time before loading the component
-    let type = context.query.type || 0
-    let page = context.query.pageNum || 0
+    const query = context.query
+    console.log(query)
+    let type = +query.type || 0
+    let page = +query.pageNum || 0
     let listQuery = {
       category: type,
       page: page
@@ -53,9 +55,15 @@ export default {
   },
 }
 </script>
-<style>
+<style lang="scss" scoped>
+@import 'assets/mixin';
+
 .tab-title {
   margin-bottom: 20px;
+}
+.nuxt-link-exact-active {
+  border-bottom: 2px solid $main-color;
+  color: $main-color;
 }
 </style>
 

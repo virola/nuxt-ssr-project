@@ -6,7 +6,7 @@
         <div class="panel fr">
           <router-link to="/search" class="panel-item"><i class="icons"><icon name="search"></icon></i></router-link>
           <div class="panel-item user-icon">
-            <router-link :to="userInfo ? '/user' : '/login'">
+            <router-link :to="userInfo ? '/user/info' : '/login'">
               <img v-if="userInfo" :src="userInfo.avatar">
               <i v-else class="icons"><icon name="user"></icon></i>
             </router-link>
@@ -14,7 +14,7 @@
             <div class="nav-sub" v-if="userInfo">
               <ul>
                 <li>
-                  <router-link to="/user/index">{{userInfo.username}}</router-link>
+                  <router-link to="/user/info">{{userInfo.username}}</router-link>
                 </li>
                 <li>
                   <router-link to="/user/collect">我的收藏</router-link>
@@ -53,7 +53,8 @@
   </header>
 </template>
 <script>
-import {mapActions, mapMutations} from 'vuex'
+import {mapMutations} from 'vuex'
+import { getUser, userSignout } from '~/service/getData'
 
 export default {
   data () {
@@ -186,9 +187,6 @@ export default {
     }
   },
   methods: {
-    ...mapActions([
-      'getUserInfo'
-    ]),
     ...mapMutations([
       'logout'
     ]),
@@ -198,6 +196,11 @@ export default {
       this.logout()
       await userSignout()
     }
+  },
+  async fetch({ store, params }) {
+    console.log(1111)
+    let res = await getUser()
+    store.commit('getUser', res.user_info)
   }
 }
 </script>

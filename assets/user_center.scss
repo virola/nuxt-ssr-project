@@ -72,7 +72,7 @@
       text-decoration: none;
     }
   }
-  .link-active {
+  .link-active, .nuxt-link-active {
     background: #fcfcfc;
     border-left: 2px solid $main-color;
     color: $main-color;

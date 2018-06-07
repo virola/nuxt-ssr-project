@@ -6,20 +6,15 @@
   </div>
 </template>
 <script>
-import {mapActions, mapMutations} from 'vuex'
 import Header from '~/components/Header'
 import Footer from '~/components/Footer'
 
 export default {
-  head: {
-    
-  },
   components: {
     'app-header': Header,
     'app-footer': Footer
-  }
+  },
+  middleware: 'appData'
 }
 </script>
-<style lang="scss">
-@import 'assets/common';
-</style>
+
