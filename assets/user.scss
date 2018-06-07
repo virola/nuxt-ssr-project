@@ -1,0 +1,55 @@
+.user-page {
+  width: 360px;
+  margin: 40px auto 100px;
+  
+  .input-group-text {
+    padding-left: 5px;
+    padding-right: 5px;
+    background: none;
+  }
+  .icons {
+    color: #d8d8d8;
+    font-size: 16px;
+  }
+}
+
+.user-link {
+  margin-bottom: 30px;
+  text-align: center;
+
+  a {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 0 25px;
+    &:hover {
+      text-decoration: none;
+    }
+    &.link-active {
+      border-bottom: 2px solid #0d2e3c;
+    }
+  }
+}
+.pass-link {
+  margin: 0 5px 25px;
+}
+
+// form 相关样式设定
+.invalid-feedback {
+  display: block;
+  visibility: hidden;
+}
+.form-control.is-invalid~.invalid-feedback, 
+.form-control.is-invalid~.invalid-tooltip, 
+.was-validated .custom-select:invalid~.invalid-feedback, 
+.was-validated .custom-select:invalid~.invalid-tooltip, 
+.was-validated .form-control:invalid~.invalid-feedback, 
+.was-validated .form-control:invalid~.invalid-tooltip {
+  visibility: visible;
+}
+.is-invalid {
+  .input-group-prepend {
+    .input-group-text {
+      border-color: #dc3545;
+    }
+  }
+}

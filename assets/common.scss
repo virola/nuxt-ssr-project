@@ -1,0 +1,257 @@
+@import 'mixin';
+
+body {
+  font: $default-font;
+  color: $main-color;
+}
+
+h1, h2 {
+  font-weight: normal;
+}
+
+ul, li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: $main-color;
+}
+a:hover {
+  color: lighten($main-color, 20%);
+  img {
+    opacity: .8;
+  }
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+i {
+  font-style: normal;
+  vertical-align: middle;
+}
+img {
+  max-width: 100%;
+}
+form, input {
+  font: $default-font;
+  color: $main-color;
+}
+
+// 公共样式
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.clear {
+  // overflow: hidden;
+  _zoom: 1;
+  
+  &::after, &::before {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
+.center {
+  text-align: center;
+}
+.icons {
+  text-align: center;
+}
+// 图标
+.fa-icon {
+  width: auto;
+  height: 1em; /* 或任意其它字体大小相对值 */
+  /* 要在 Safari 中正常工作，需要再引入如下两行代码 */
+  max-width: 100%;
+  max-height: 100%;
+  vertical-align: middle;
+}
+// css 小箭头
+.caret {
+  width: 14px;
+  height: 14px;
+  border: 14px solid transparent;
+}
+.caret-small {
+  width: 5px;
+  height: 5px;
+  border-width: 5px;
+}
+.caret-right {
+  border-left-color: #fff;
+}
+.caret-down {
+  border-top-color: #fff;
+}
+.caret-down.caret-dark {
+  border-top-color: #aaa;
+}
+// bootstrap样式重写
+.btn {
+  font-size: 14px;
+}
+.btn-primary {
+  color: #fff;
+  background-color: $main-color;
+  border-color: $main-color;
+  &:hover {
+    background-color: lighten($main-color, 20%);
+    border-color: lighten($main-color, 20%);
+  }
+}
+.form-control, .input-group-text {
+  font-size: 12px;
+}
+.form-control, .btn, .input-group-text {
+  border-radius: 2px;
+}
+.input-group>.custom-select:not(:first-child), .input-group>.form-control:not(:first-child) {
+  border-left: 0;
+}
+input::-webkit-input-placeholder {
+  color: #eee;
+}
+.form-group.has-feedback {
+  margin-bottom: 5px;
+}
+.custom-select.is-valid, .form-control.is-valid, .was-validated .custom-select:valid, .was-validated .form-control:valid {
+  border-color: #ced4da;
+}
+.custom-select.is-valid:focus, .form-control.is-valid:focus, .was-validated .custom-select:valid:focus, .was-validated .form-control:valid:focus {
+  border-color: #ced4da;
+  box-shadow: 0 0 0 0.1rem rgba(143, 145, 145, 0.25);
+}
+.was-validated .is-invalid .form-control {
+  border-color: #dc3545;
+}
+
+.input-dark {
+  border-color: $main-color;
+}
+
+// 主显示栏目样式
+$page-width: 1000px;
+$side-width: 252px;
+$main-side-gap: 20px;
+$main-width: $page-width - $side-width - $main-side-gap - 1px;
+.main {
+  width: 1030px;
+  margin: 70px auto 0;
+}
+.side-panel {
+  width: $side-width;
+}
+.main-panel {
+  width: $main-width;
+}
+.side-box {
+  margin-bottom: 20px;
+  .side-title {
+    height: 42px;
+    border-bottom: 1px solid #d8d8d8;
+    margin-bottom: 20px;
+    line-height: 42px;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;
+  }
+}
+
+// video button
+.video-btn {
+  @include wh(40px, 40px);
+  @include borderRadius(50%);
+  background: #0d213c;
+
+  i {
+    @include center;
+    -webkit-transform: translate(-45%, -50%);
+    transform: translate(-45%, -50%);
+    color: #fff;
+    font-size: 16px;
+  }
+}
+
+// article styles
+.article {
+  .content p {
+    font-size: 16px;
+    margin: 20px 0;
+  }
+}
+
+// pager 翻页组件
+.pager-wrap {
+  padding: 20px 0;
+  font-size: 12px;
+  a, strong {
+    float: left;
+    width: 28px;
+    height: 28px;
+    margin-right: 6px;
+    font-size: 12px;
+    line-height: 26px;
+    text-align: center;
+  }
+
+  a {
+    cursor: pointer;
+    color: $main-color;
+    border: 1px solid #ddd;
+    @include borderRadius(2px);
+    &:hover {
+      border-color: $main-color;
+    }
+    &.active {
+      background: $main-color;
+      border-color: $main-color;
+      color: #fff;
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+  strong {
+    color: #aaa;
+    font-size: 14px;
+  }
+}
+
+// common tab title
+.tab-title {
+  position: relative;
+  line-height: 40px;
+  height: 42px;
+  font-size: 15px;
+  font-weight: 400;
+  border-bottom: 1px solid #d8d8d8;
+
+  a, span {
+    float: left;
+    padding: 0 10px;
+    margin-right: 20px;
+    color: #656565;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  .active, span {
+    border-bottom: 2px solid $main-color;
+    color: $main-color;
+  }
+}
+// loadmore components
+.loadmore {
+  padding: 10px;
+  font-size: 14px;
+  color: #aaa;
+}

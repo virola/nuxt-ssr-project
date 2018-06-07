@@ -1,0 +1,84 @@
+@import 'mixin';
+
+// 用户中心的公共样式
+.user-center {
+  width: 900px;
+  margin: 40px auto;
+}
+.user-sider {
+  width: 200px;
+}
+.user-main {
+  width: 640px;
+}
+
+.user-avatar {
+  margin: 20px 0 0;
+  a {
+    display: block;
+    position: relative;
+    @include wh(80px, 80px);
+    margin: 0 auto;
+    img {
+      width: 100%;
+      @include borderRadius(50%);
+    }
+    span {
+      position: absolute;
+      width: 100%;
+      
+      @include center;
+      text-align: center;
+      font-size: 12px;
+      color: #fff;
+      text-shadow: 0 0 2px #aaa;
+      display: none;
+    }
+    &:hover {
+      span {
+        display: block;
+      }
+    }
+  }
+}
+
+.user-name {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #656565;
+  text-align: center;
+  b {
+    word-wrap: break-word;
+  }
+
+  i {
+    margin-left: 5px;
+    color: #aaa;
+    font-size: 16px;
+    cursor: pointer;
+  }
+}
+.side-nav {
+  margin-top: 20px;
+
+  a {
+    display: block;
+    padding-left: 25px;
+    line-height: 40px;
+    border-left: 2px solid transparent;
+    color: #a5a5a5;
+    
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .link-active {
+    background: #fcfcfc;
+    border-left: 2px solid $main-color;
+    color: $main-color;
+  }
+  
+  i {
+    margin-right: 15px;
+  }  
+}

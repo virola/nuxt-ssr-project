@@ -1,0 +1,14 @@
+{
+    "status": "ok",
+    "data": {
+        "user_info": {
+            "user_id": 530530,
+            "username": "virola",
+            "avatar": "/static/img/avatar.jpeg",
+            "mobile": "13977885544",
+            "auth_wechat": 1,
+            "auth_weibo": 0,
+            "auth_qq": 0
+        }
+    }
+}

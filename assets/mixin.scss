@@ -1,0 +1,65 @@
+// base color & styles
+$main-color: #0d213c;
+$text-dark: #000;
+$default-font: 14px/1.8 'Lantinghei SC','Open Sans',Arial,'Hiragino Sans GB','Microsoft YaHei',STHeiti,'WenQuanYi Micro Hei',SimSun,Helvetica,sans-serif;
+
+// article styles
+$main-title-font: 24px $main-color;
+$label-font: 16px bold $main-color;
+$info-font: 14px;
+
+@mixin borderRadius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+  border-radius: $radius;
+}
+//定位全屏
+@mixin allcover{
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+//定位上下左右居中
+@mixin center {  
+	position: absolute;
+	top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+//定位上下居中
+@mixin ct {  
+	position: absolute;
+	top: 50%;
+  transform: translateY(-50%);
+}
+
+//定位上下居中
+@mixin cl {  
+	position: absolute;
+	left: 50%;
+  transform: translateX(-50%);
+}
+
+//宽高
+@mixin wh($width, $height){
+	width: $width;
+	height: $height;
+}
+
+// 省略
+@mixin ellipsis() {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+@mixin ellipsis-more($line: 2) {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+}

@@ -1,0 +1,142 @@
+@import 'src/assets/mixin';
+
+// 个人设置
+.auth-list {
+  li {
+    margin: 20px;
+    color: #656565;
+
+    a {
+      float: right;
+      font-size: 12px;
+    }
+    i {
+      display: inline-block;
+      text-align: center;
+      width: 20px;
+      margin-right: 20px;
+      font-size: 18px;
+      color: #999;
+    }
+    b {
+      font-weight: 400;
+    }
+  }
+}
+
+// 我的收藏
+$item-width: 200px;
+$item-height: 300px;
+// $item-gap-width: 20px;
+$item-gap-height: 20px;
+
+.card-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .list-item {
+    @include wh($item-width, $item-height);
+    margin-bottom: $item-gap-height;
+    border: 1px solid #ddd;
+    border-top: 0;
+  }
+}
+.list-item {
+  img {
+    max-width: 100%;
+  }
+}
+.list-article {
+  .list-item {
+    &:hover {
+      opacity: .6;
+    }
+    &:active {
+      opacity: .9;
+    }
+    .link-cover {
+      position: absolute;
+      z-index: 1;
+      @include wh(100%, 100%);
+    }
+  }
+}
+.article-pic {
+  position: relative;
+  display: block;
+  width: 100%;
+  .video-btn {
+    position: absolute;
+    z-index: 1;
+    right: 20px;
+    bottom: -20px;
+  }
+}
+.article-text {
+  font-size: 12px;
+  padding: 10px 10px 0;
+
+  h3 {
+    font-size: 14px;
+    width: 100%;
+    white-space: nowrap;
+    @include ellipsis;
+  }
+  p {
+    margin-bottom: 10px;
+    color: #9b9b9b;
+  }
+  .article-author {
+    margin: 0;
+  }
+  .article-brief {
+    @include ellipsis-more(2);
+    margin-bottom: 10px;
+  }
+  .article-date {
+    margin-bottom: 10px;
+  }
+}
+.article-column {
+  margin-bottom: 15px;
+  color: #656565;
+  i {
+    margin-right: 5px;
+  }
+}
+
+// 我的消息提醒
+.ctrl-panel {
+  padding: 10px 5px;
+  font-size: 12px;
+  .btn {
+    font-size: 12px;
+  }
+}
+// .form-check {
+//   // line-height: 32px;
+// }
+.form-check-input, .form-check-label {
+  margin-right: 20px;
+}
+.msg-list {
+  li {
+    padding: 10px 5px;
+    &:hover, .checked {
+      background: #f8f8f8;
+    }
+  }
+  label {
+    color: #656565;
+    font-size: 12px;
+  }
+  .btn {
+    float: right;
+    @include wh(80px, 28px);
+    padding: 4px;
+    font-size: 12px;
+  }
+}
+

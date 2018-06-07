@@ -1,0 +1,29 @@
+{
+  "status": "ok",
+  "data": {
+    "list": [
+      {
+        "id": 1,
+        "title": "地景：西班牙东北的地域精神",
+        "brief": "每一个酒窖其实都是一座孕育着“地域”与“地景”信息的博物馆。",
+        "pic": "http://www.archiposition.com/media/k2/items/cache/71c6ea8d47a07b984512669ea9c348f7_M.jpg",
+        "author": "Alice",
+        "col_title": "旅行报名",
+        "link": "",
+        "date": "2018-04-02 02:18:57",
+        "date_format": "2018.04.02 - 2018.5.30"
+      },
+      {
+        "id": 2,
+        "title": "在哥伦布：走进建筑与自身",
+        "brief": "影片好似一封写给哥伦布的情书，镜头冷静、优雅，讲述了一段珍贵而美丽的相遇，这既是人与人之间的故事，也是人与建筑之间的故事。",
+        "pic": "http://www.archiposition.com/media/k2/items/cache/553821eea6dd169d2ad0a1e6a84bd55a_M.jpg",
+        "author": "Alice",
+        "col_title": "旅行报名",
+        "link": "",
+        "date": "2018.04.03",
+        "date_format": "2018.04.01 - 2018.5.30"
+      }
+    ]
+  }
+}

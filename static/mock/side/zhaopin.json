@@ -1,0 +1,77 @@
+{
+  "status": "ok",
+  "data": {
+    "list": [
+      {
+        "id": 33,
+        "corp_name": "WITH-IN 善创建筑",
+        "job_name": "建筑师 | 助理建筑师 | 研究助理",
+        "title": "WITH-IN 善创建筑：建筑师、助理建筑师、研究助理【北京】（有效期：2018年4月10日至2018年10月10日）",
+        "brief": "办公地点：北京朝阳区建外SOHO A座2102室。",
+        "pic": "http://www.archiposition.com/media/k2/items/cache/7a4010c728df5112a2a660b7127561f8_S.jpg",
+        "author": "Alice",
+        "col_title": "招聘信息",
+        "link": "",
+        "date": "2018.04.13",
+        "place": "北京",
+        "date_format": "12d"
+      },
+      {
+        "id": 33,
+        "corp_name": "一方国际环境景观",
+        "job_name": "景观规划设计师 | 助理设计师",
+        "title": "一方国际环境景观：景观规划设计师、助理设计师、景观施工图设计师、种植设计师、实习生【北京、深圳】（有效期：2018年4月10号至2018年10月23号）",
+        "brief": "办公地点：北京市海淀区中间建筑5区21栋 / 深圳市南山高新区深港产学研基地大楼西座南八层。",
+        "pic": "http://www.archiposition.com/media/k2/items/cache/54e18e61193ec51e66c99052eae28775_S.jpg",
+        "author": "Alice",
+        "col_title": "招聘信息",
+        "link": "",
+        "date": "2018.04.11",
+        "place": "北京/深圳",
+        "date_format": "11d"
+      },
+      {
+        "id": 33,
+        "corp_name": "CallisonRTKL",
+        "job_name": "主创建筑设计师 | 项目建筑师",
+        "title": "CallisonRTKL：主创建筑设计师、项目建筑师、零售设计师、室内设计师、规划设计师【北京、上海、香港】（有效期：2018年4月10号至2018年10月23号）",
+        "brief": "办公地点：北京朝阳 / 香港上环 / 上海新天地。",
+        "pic": "http://www.archiposition.com/media/k2/items/cache/63469429912dc1ccdb06743287acc7c4_S.jpg",
+        "author": "Alice",
+        "col_title": "招聘信息",
+        "link": "",
+        "date": "2018.04.10",
+        "place": "北京/香港/上海",
+        "date_format": "11d"
+      },
+      {
+        "id": 33,
+        "corp_name": "九思建筑JUSTUDIO",
+        "job_name": "主创建筑师 | 建筑设计师",
+        "title": "九思建筑JUSTUDIO：主创建筑师、建筑设计师、景观设计师、助理建筑师、建筑专业实习生【上海】（有效期：2018年4月9号至2018年10月22号）",
+        "brief": "办公地点：上海杨浦区通北路589号保利绿地广场L楼302室。",
+        "pic": "http://www.archiposition.com/media/k2/items/cache/dcaeef4c16b8a8dd2169c4e6191f97b9_S.jpg",
+        "author": "Alice",
+        "col_title": "招聘信息",
+        "link": "",
+        "date": "2018.04.02",
+        "place": "上海",
+        "date_format": "new"
+      },
+      {
+        "id": 33,
+        "corp_name": "大正建筑Dplus Studio",
+        "job_name": "建筑师 | 室内设计师",
+        "title": "大正建筑Dplus Studio：建筑设计实习生、建筑媒体实习生、建筑师、室内设计师、媒体主管【上海、深圳】（有效期：2018年4月9号至2018年10月22号）",
+        "brief": "办公地点：上海市杨浦区通北路589号燕舞东方大厦L楼1204室 / 深圳市南山区铜鼓路城市山谷9栋113A室。",
+        "pic": "http://www.archiposition.com/media/k2/items/cache/149ee80bc14123589c47db7df7828f61_S.jpg",
+        "author": "Alice",
+        "col_title": "招聘信息",
+        "link": "",
+        "date": "2018.10.22",
+        "place": "上海/深圳",
+        "date_format": "1d"
+      }
+    ]
+  }
+}
